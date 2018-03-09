@@ -1,30 +1,39 @@
 package ru.stqa.pft.sandbox;
 
+import java.awt.*;
+
 public class helloworld {
 
   public static void main(String[] args) {
-   hello("world");
-   hello("Max");
+    hello("world");
+    hello("Max");
 
-   double l = 5;
-    System.out.println("Площадь квадрата со стороной " + l + "=" + area(l));
+    Square s = new Square(5);
+//   s.l = 5;
+    System.out.println("Площадь квадрата со стороной " + s.l + " = " + s.area());
 
-    double x = 6;
-    double y = 9;
-    System.out.println("Площадь прямоугольника со сторонами " + x + " и " + y + " = " + area(x,y));
+    Rectangle r = new Rectangle(4, 6);
+//    r.a = 6;
+//    r.b = 9;
+    System.out.println("Площадь прямоугольника со сторонами " + r.a + " и " + r.b + " = " + r.area());
+
+    double q = 9;
+    double w = 8;
+    if (q > w) {
+      System.out.println("Дискриминант от " + q + " и " + w + " = " + disc(q, w));
+    } else {
+      System.out.println("q must be bigger than w");
+    }
   }
 
-
-  public static void hello(String smt){
+  public static void hello(String smt) {
 //    String smt = "world";
     System.out.println("Hello " + smt);
   }
 
-  public static double area(double len){
-    return len*len;
+  public static double disc(double a, double b) {
+    return Math.sqrt(a * a - b * b);
   }
 
-  public static double area(double a, double b){
-    return a * b;
-  }
+
 }
